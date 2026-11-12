@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --bg: #f3f1ec;
+  --surface: #ffffff;
+  --field: #f7f5f1;
+  --ink: #16150f;
+  --muted: #6b675e;
+  --line: #e2ded4;
+  --accent: #d9430f;
+  --accent-soft: #fdeee7;
+  --on-accent: #ffffff;
+  --ok: #18794e;
+  --warn: #9a5b00;
+  --danger: #b42318;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111210;
+  --surface: #1a1b18;
+  --field: #222320;
+  --ink: #f1efe9;
+  --muted: #a39f95;
+  --line: #31322d;
+  --accent: #ff6a3d;
+  --accent-soft: #33201a;
+  --on-accent: #1a0d07;
+  --ok: #5fd39a;
+  --warn: #f0b354;
+  --danger: #ff8a7a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-field: var(--field);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input[type="range"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Shown behind the preview so transparent areas are visible. */
+.checkerboard {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, #e9e6df 25%, transparent 25%, transparent 75%, #e9e6df 75%),
+    linear-gradient(45deg, #e9e6df 25%, transparent 25%, transparent 75%, #e9e6df 75%);
+  background-size: 16px 16px;
+  background-position:
+    0 0,
+    8px 8px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
